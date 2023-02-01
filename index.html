@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+    <title>リクエストソング</title>
+</head>
+<body>
+    <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSeW7rek0Glc8KmBNQLhfZWJS56RZDU0nkI0MU4VtVaeRXKDSA/formResponse" method="post" target="hidden_iframe"
+    onsubmit="submitted=true;"class="c-form">
+    <h1>楽曲リクエスト</h1>
+    <p>曲名 <span>　※必須</span></p>
+<input type="text" name="entry.354949898" required class="form">
+<p>アーティスト名<span>　※必須</span></p>
+<input type="text" name="entry.714562996" required class="form">
+<p>Youtube URL(できれば)</p>
+<input type="text" name="entry.414858915" class="form">
+<br>
+<br>
+ <input type="submit" value="送信" class="button">
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+    let submitted = false;
+</script>
+<iframe
+    name="hidden_iframe"
+    id="hidden_iframe"
+    style="display: none"
+    onload="if(submitted){window.location='ok.html';}"
+></iframe>
+<style>
+    body{
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    h1{
+        text-align: center;
+    }
+    
+    form{
+        text-align: center;
+    }
+
+
+    .form{
+     width: 250px;
+	border: 1px solid;
+	border-radius: 4px;
+	color: #1b2538;
+    font-family: 'Noto Sans JP', sans-serif;
+
+	
+    }
+
+    .button{
+    background: #003febc0; 
+    color: #fff;
+    border: 1.6px solid rgb(0, 0, 0) ;
+    font-family: 'Noto Sans JP', sans-serif;
+
+
+    }
+
+    span{
+        color: red;
+    }
+</style>
