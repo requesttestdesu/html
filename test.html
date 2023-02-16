@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>簡単な4択クイズ</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+
+		.question {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+
+		.choices {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.choice {
+			background-color: #eee;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.choice:hover {
+			background-color: #ddd;
+		}
+
+		.selected {
+			background-color: #007bff;
+			color: #fff;
+		}
+
+		.submit-btn {
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		@media only screen and (max-width: 480px) {
+			.question {
+				font-size: 18px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>簡単な4択クイズ</h1>
+	<div class="question">
+		<p>日本の首都は？</p>
+		<div class="choices">
+			<div class="choice">東京</div>
+			<div class="choice">大阪</div>
+			<div class="choice">京都</div>
+			<div class="choice">福岡</div>
+		</div>
+		<button class="submit-btn">回答する</button>
+	</div>
+	<script>
+		const choices = document.querySelectorAll('.choice');
+		const submitBtn = document.querySelector('.submit-btn');
+
+		choices.forEach(choice => {
+			choice.addEventListener('click', () => {
+				choices.forEach(c => c.classList.remove('selected'));
+				choice.classList.add('selected');
+			});
+		});
+
+		submitBtn.addEventListener('click', () => {
+			const selectedChoice = document.querySelector('.selected');
+			if (selectedChoice) {
+				if (selectedChoice.textContent === '東京') {
+					alert('正解！');
+				} else {
+					alert('不正解...');
+				}
+			} else {
+				alert('選択してください。');
+			}
+		});
+	</script>
+</body>
+</html>
